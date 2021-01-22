@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>slideShow</title>
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+  <div class="slides" onmouseenter="stopslider()" onmouseleave="starslider()">
+  	<div class="slide">
+  		<img src="img/1.jpg" alt="">
+  	</div>
+
+  	<div class="slide">
+  		<img src="img/2.jpg" alt="">
+  	</div>
+
+    <div class="slide">
+  		<img src="img/3.jpg" alt="">
+  	</div>
+  			
+  	<div class="slide">
+  	    <img src="img/4.jpg" alt="">	
+  	</div>
+  	
+  	<div class="slide">
+  	   <img src="img/5.jpg" alt="">	
+  	</div> 
+
+  	<div class="right" onclick="clickright()">
+  		  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+  	</div>
+  	<div class="left" onclick="clickleft()">
+  		<i class="fa fa-chevron-left" aria-hidden="true"></i>
+  	</div> 
+  </div> 
+
+  
+  <script type="text/javascript">
+  	var slides = document.getElementsByClassName("slide") ;
+    var index = 0
+    
+    function clickleft() {
+	    index++ ;
+	    if(index < slides.length)
+	    slides[0].style.marginLeft = "-" + index * 100 + "%" ;
+	    else {	
+	       slides[0].style.marginLeft = 0 + "px" ; 
+	       index = 0 ;	
+	    }
+    }
+
+     function clickright() {
+        if(index != 0) {
+     		index-- ;
+     		slides[0].style.marginLeft = "-" + index * 100 + "%" ;
+     	  }
+    	}
+    
+     
+     var setI = setInterval(clickleft ,2000) ;
+      function stopslider() {
+         clearInterval(setI)
+    }
+     function starslider() {
+             console.log('test');
+             setI = setInterval(clickleft ,2000) ;
+     }
+
+   
+  </script>
+</body>
+</html>

@@ -1,2 +1,2 @@
 # mynewrepproj
-task list project 
+slide show
